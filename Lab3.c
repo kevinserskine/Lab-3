@@ -121,7 +121,7 @@ int solve(int puzzle[][9]){
             //correct guess is set to the appropriate row and column
             puzzle[row][column] = i;
             
-            //recursive call to keep check all cells
+            //recursive call to keep checking all cells
             if(solve(puzzle)) return 1;
             puzzle[row][column] = 0;
             
