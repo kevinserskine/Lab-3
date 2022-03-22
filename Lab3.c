@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <pthread.h>
 
 //All Function are declared
 int solve(int[][9]);
