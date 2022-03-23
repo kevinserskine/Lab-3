@@ -21,7 +21,7 @@ int main(){
 	for (int i = 0; i < 9; i++){
 		for (int j = 0; j < 9; j++){
 		
-			//Variable that holds contents of file is 				initialized
+			//Variable that holds contents of file is initialized
 			char c;
 			
 			//Error checks the file
@@ -44,7 +44,7 @@ int main(){
     int row = 0;
     int column = 0;
 	
-	//If the puzzle is solved then the 2d array(puzzle) is printed 		out
+	//If the puzzle is solved then the 2d array(puzzle) is printed out
         if(solve(puzzle)){
         //open solution file
         FILE *f2 = fopen("solution.txt", "w");
@@ -57,7 +57,7 @@ int main(){
         }
         //close file
 	fclose(f2);
-        }else{
+        } else {
         printf("%s", "No Solution to the Puzzle Provided");
         }
         
@@ -65,7 +65,7 @@ int main(){
     
 }
 
-//Fucntion is used to check the validity of the number that is guessed
+//Function is used to check the validity of the number that is guessed
 int check(int puzzle[][9], int row, int column, int num){
     
     //These are used to check the imediate 3x3 array of number  
@@ -74,15 +74,15 @@ int check(int puzzle[][9], int row, int column, int num){
     
     //for loop to iterate through all 9 spaces of array
     for (int x = 0; x < 9; ++x){
-    	//Checks if any number in the row is equal to the guessed 		number
+    	//Checks if any number in the row is equal to the guessed number
         if (puzzle[row][x] == num){
             return 0;
         }
-        //Checks if any number in the column is equal to the guessed 		number
+        //Checks if any number in the column is equal to the guessed number
         if (puzzle[x][column] == num){
             return 0;
         }
-        //Checks if any number in the imediate 3x3 is equal to the 		guessed number
+        //Checks if any number in the imediate 3x3 is equal to the guessed number
         if (puzzle[box_x + (x % 3)][box_y + (x / 3)] == num){
             return 0;
         }
@@ -97,7 +97,7 @@ int find_zero(int puzzle[][9], int *row, int *column){
         for (int j = 0; j < 9; j++){
             //if cell is 0 
             if(!puzzle[i][j]){
-            	//points to the row and column and sets them to that 		which the zero found exists in
+            	//points to the row and column and sets them to that which the zero found exists in
                 *row = i;
                 *column = j;
                 return 1;
